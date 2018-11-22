@@ -1,2 +1,1 @@
-# bad-ansible
-Bad Ansible is a deliberately poorly written playbook and Ansible Environment for training purposes
+# red-hat-ansible-advanced-Dec2018
