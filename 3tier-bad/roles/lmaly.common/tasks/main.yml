@@ -1,0 +1,7 @@
+---
+# tasks file for lmaly.common
+- name: Enable 'open_three-tier-app' repository
+  template:
+    src: templates/open_three-tier-app.repo.j2
+    dest: /etc/yum.repos.d/open_three-tier-app.repo
+    mode: 0644

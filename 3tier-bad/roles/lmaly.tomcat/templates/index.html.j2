@@ -1,3 +1,4 @@
+{{ ansible_managed | comment }}
 <!doctype html>
 
 <html lang="en">
@@ -11,6 +12,6 @@
 </head>
 
 <body>
-    <h1>Ansible has done its job - Welcome to Tomcat on App2</h1>
+    <h1>Ansible has done its job - Welcome to Tomcat on {{ inventory_hostname }}</h1>
 </body>
 </html>
