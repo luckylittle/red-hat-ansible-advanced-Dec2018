@@ -6,6 +6,8 @@
   - name: Include Common role
     include_role:
       name: lmaly.common
+  tags:
+    - general
 
 - name: 2.0 | Apply HAproxy role
   hosts: frontends
@@ -14,6 +16,9 @@
   - name: Include HAproxy role
     include_role:
       name: lmaly.haproxy
+  tags:
+    - haproxy
+    - frontend
 
 - name: 3.0 | Apply Tomcat role
   hosts: apps
@@ -23,12 +28,25 @@
   - name: Include Tomcat role
     include_role:
       name: lmaly.tomcat
+  tags:
+    - tomcat
+    - app
 
 - name: 4.0 | Apply PostgreSQL role
   hosts: appdbs
-  gather_facts: false
   become: true
   tasks:
-  - name: Include Postgres role
+  - name: Include PostgreSQL role
     include_role:
       name: lmaly.postgres
+  tags:
+    - postgresql
+    - db
+
+- name: 5.0 | Smoke test
+  hosts: frontends
+  tasks:
+  - name: Include smoke test
+    include_tasks: tests/main.yml
+  tags:
+    - tests

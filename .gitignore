@@ -1,5 +1,1 @@
-1901key.pem
-*/env
-*.pem
-*/open_three-tier-app.repo
-
+vault_password_file

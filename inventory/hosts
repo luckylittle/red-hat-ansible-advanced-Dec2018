@@ -1,0 +1,28 @@
+[3tierapp:vars]
+
+###########################################################################
+### Ansible Vars
+###########################################################################
+
+[3tierapp:children]
+frontends
+apps
+appdbs
+support
+
+[frontends]
+## These are the frontends
+frontend1.38b7.internal ansible_host=frontend1.38b7.example.opentlc.com
+
+[apps]
+## These are the apps
+app1.38b7.internal ansible_host=app1.38b7.example.opentlc.com
+app2.38b7.internal ansible_host=app2.38b7.example.opentlc.com
+
+[appdbs]
+## These are the appdbs
+appdb1.38b7.internal ansible_host=appdb1.38b7.example.opentlc.com
+
+## These are the support
+[support]
+support1.38b7.internal ansible_host=support1.38b7.example.opentlc.com

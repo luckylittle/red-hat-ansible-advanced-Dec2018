@@ -1,0 +1,9 @@
+---
+- name: 1.0 | Check load balancer's response
+  uri:
+    url:  http://{{ hostvars[groups['frontends'][0]].ansible_host }}
+    return_content: yes
+  register: result
+  until: "'Ansible has done its job - Welcome to Tomcat on' in result.content"
+  retries: 10
+  delay: 1
