@@ -12,13 +12,13 @@
 
 - name: 3.0 | Create Ansible tomcat directory
   file:
-    path: /usr/share/tomcat/webapps/ROOT # Is this path correct?
+    path: /usr/share/tomcat/webapps/ROOT
     state: directory
 
 - name: 4.0 | Copy static index.html to Tomcat
   template:
     src: templates/index.html.j2
-    dest: /usr/share/tomcat/webapps/ROOT/index.html # Is this path correct?
+    dest: /usr/share/tomcat/webapps/ROOT/index.html
     mode: 0644
   notify: Restart Tomcat
 
