@@ -1,0 +1,7 @@
+---
+- name: 1.0 | Add AD users
+  hosts: windows
+  vars_files:
+    - ad_user_vars.yml
+  roles:
+    - win_domain_user
