@@ -22,7 +22,7 @@ tower3.9cf8.internal ansible_host=tower1.9cf8.example.opentlc.com
 
 [windows]
 ## These are the activedirectory servers
-ad1.9cf8.internal ansible_host=ad1.9cf8.example.opentlc.com
+ad1.9cf8.internal ansible_host=ad1.9cf8.example.opentlc.com ansible_password=<<REMOVED>>
 
 
 ## These are the supporthosts

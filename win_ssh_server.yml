@@ -1,0 +1,11 @@
+---
+- name: 1.0 | Install OpenSSH
+  hosts: windows
+  vars_files:
+    - ssh_var.yml
+  tasks:
+  - name: Include Windows Service role
+    include_role:
+      name: win_service_config
+  tags:
+    - general
