@@ -1,0 +1,9 @@
+---
+- name: 1.0 | Install Windows AD
+  hosts: windows
+  tasks:
+  - name: Include AD role
+    include_role:
+      name: win_ad_install
+  tags:
+    - general

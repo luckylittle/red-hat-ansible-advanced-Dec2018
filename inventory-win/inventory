@@ -1,0 +1,37 @@
+[GenericExample:vars]
+
+###########################################################################
+### Ansible Vars
+###########################################################################
+timeout=60
+ansible_become=yes
+ansible_user=ec2-user
+
+
+[GenericExample:children]
+towers
+windows
+support
+
+[towers]
+## These are the towers
+tower1.9cf8.internal ansible_host=tower3.9cf8.example.opentlc.com
+tower2.9cf8.internal ansible_host=tower2.9cf8.example.opentlc.com
+tower3.9cf8.internal ansible_host=tower1.9cf8.example.opentlc.com
+
+
+[windows]
+## These are the activedirectory servers
+ad1.9cf8.internal ansible_host=ad1.9cf8.example.opentlc.com
+
+
+## These are the supporthosts
+[support]
+support1.9cf8.internal ansible_host=support1.9cf8.example.opentlc.com
+support2.9cf8.internal ansible_host=support2.9cf8.example.opentlc.com
+
+[windows:vars]
+ansible_connection=winrm
+ansible_user=Administrator
+ansible_winrm_server_cert_validation=ignore
+ansible_become=false
