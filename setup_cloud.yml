@@ -1,0 +1,10 @@
+---
+- hosts: jumpbox
+  become: true
+  gather_facts: false
+  tasks:
+    - name: 1.0 | Create a server instances
+      include_role:
+        name: lmaly.osp-instances
+  tags:
+    - osp-instances

@@ -1,0 +1,35 @@
+---
+# vars file for lmaly.osp-instances
+osp_servers:
+  app1:
+    instance_name: app1
+    meta:
+      - { group: apps,  deployment_name: QA }
+    security_group_name: apps # 8080/tcp, 22/tcp, icmp
+    flavor_name: m2.small
+    image: rhel-guest
+    key_pair: ansible_ssh
+  app2:
+    instance_name: app2
+    meta:
+      - { group: apps,  deployment_name: QA }
+    security_group_name: apps # 8080/tcp, 22/tcp, icmp
+    flavor_name: m2.small
+    image: rhel-guest
+    key_pair: ansible_ssh
+  db:
+    instance_name: db
+    meta:
+      - { group: appdbs,  deployment_name: QA }
+    security_group_name: db # 5432/tcp, 22/tcp, icmp
+    flavor_name: m2.small
+    image: rhel-guest
+    key_pair: ansible_ssh
+  frontend:
+    instance_name: frontend
+    meta:
+      - { group: frontends,  deployment_name: QA }
+    security_group_name: frontend # 80/tcp, 22/tcp, icmp
+    flavor_name: m2.small
+    image: rhel-guest
+    key_pair: ansible_ssh
