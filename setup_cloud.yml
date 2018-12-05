@@ -1,10 +1,18 @@
 ---
+# - hosts: jumpbox
+#   become: true
+#   gather_facts: false
+#   tasks:
+#     - name: 1.0 | Create a server instances
+#       include_role:
+#         name: lmaly.osp-instances
+#   tags:
+#     - osp-instances
+
 - hosts: jumpbox
   become: true
   gather_facts: false
-  tasks:
-    - name: 1.0 | Create a server instances
-      include_role:
-        name: lmaly.osp-instances
-  tags:
-    - osp-instances
+  roles:
+    - lmaly.in-memory-inventory
+
+- import_playbook: main.yml
